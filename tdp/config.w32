@@ -1,0 +1,7 @@
+ARG_ENABLE('tdp', 'tdp support', 'no');
+
+if (PHP_TDP != 'no') {
+	AC_DEFINE('HAVE_TDP', 1, 'tdp support enabled');
+
+	EXTENSION('tdp', 'tdp.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
